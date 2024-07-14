@@ -1,0 +1,30 @@
+main {
+    margin: 2em auto;
+    max-width: 100%;
+    width: 80ex;
+    position: relative;
+
+    animation-name: mainSwing;
+    animation-duration: 2s;
+}
+
+.bold { font-weight: bold; }
+
+@keyframes mainSwing {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+main article > * {
+    animation-name: articleFadein;
+    animation-duration: 1s;
+}
+
+@keyframes articleFadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

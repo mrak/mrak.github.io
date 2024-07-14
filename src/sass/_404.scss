@@ -1,0 +1,64 @@
+$thickness: 1vw;
+$size: 20vw;
+$inner-size: $size - (4*$thickness);
+
+#not-found {
+    text-align: center;
+    margin: 2em auto;
+    width: $size;
+    height: $size;
+}
+
+
+#gear {
+    position: absolute;
+    margin: $thickness;
+    display: block;
+    font-size: calc($size / 3);
+    line-height: $inner-size;
+    height: $inner-size;
+    width: $inner-size;
+    border-radius: $inner-size;
+    border: $thickness solid $foreground;
+    background-color: $background;
+
+    .tooth {
+        position: absolute;
+        top: -(2 * $thickness);
+        left: calc($inner-size / 2) - calc($thickness / 2);
+        height: $size;
+        width: $thickness;
+        background-color: $foreground;
+        border-radius: calc($thickness / 4);
+
+        &.two { transform: rotate(90deg); }
+        &.three { transform: rotate(45deg); }
+        &.four { transform: rotate(-45deg); }
+        &.five { transform: rotate(22.5deg); }
+        &.six { transform: rotate(-22.5deg); }
+        &.seven { transform: rotate(67.5deg); }
+        &.eight { transform: rotate(-67.5deg); }
+    }
+
+    animation: clockwise 10s infinite linear;
+}
+
+#gear-center {
+    position: absolute;
+    height: $inner-size;
+    width: $inner-size;
+    background: $background;
+    border-radius: $inner-size;
+
+    animation: counter-clockwise 10s infinite linear;
+}
+
+@keyframes clockwise {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes counter-clockwise {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
+}

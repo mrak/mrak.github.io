@@ -1,0 +1,33 @@
+pre {
+    padding: 1em;
+    background: $term-background;
+    color: $term-foreground;
+    border-radius: 1em;
+    margin: 1em 0;
+    box-shadow: 0 0 0.1em 0.1em gray;
+    text-shadow: none;
+}
+
+code {
+    font-family: monospace, "Lucida Console", Monaco;
+    background: $term-background;
+    color: $term-foreground;
+
+    .red { color: $term-red; }
+    .green { color: $term-green; }
+    .yellow { color: $term-yellow; }
+    .blue { color: $term-blue; }
+    .magenta { color: $term-magenta; }
+    .cyan { color: $term-cyan; }
+
+    .bold { font-weight: normal; }
+
+    .bold.black { color: $term-bold-black; }
+    .bold.red { color: $term-bold-red; }
+    .bold.green { color: $term-bold-green; }
+    .bold.yellow { color: $term-bold-yellow; }
+    .bold.blue { color: $term-bold-blue; }
+    .bold.magenta { color: $term-bold-magenta; }
+    .bold.cyan { color: $term-bold-cyan; }
+    .bold.white { color: $term-bold-white; }
+}

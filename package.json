@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "build": "./build/build.sh",
+    "start": "nginx -c $PWD/nginx.conf -p $PWD"
+  },
+  "devDependencies": {
+    "marked-highlight" : "^2.1.0",
+    "marked": "^11.1.1",
+    "highlight.js": "^11.9.0",
+    "sass": "^1.70.0"
+  }
+}

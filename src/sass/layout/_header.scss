@@ -1,0 +1,66 @@
+#logo {
+    color: black;
+
+    &:hover {
+        color: gray;
+    }
+}
+
+header {
+    font-size: 1.5em;
+    line-height: 2em;
+    box-shadow: 0 0 0.1em 0.1em gray;
+    position: relative;
+
+    a {
+        text-decoration: none;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+
+        .fa {
+            margin: 0 1em;
+        }
+        .fa-github {
+            color: black;
+        }
+        a:hover .fa-github {
+            color: orange;
+        }
+
+        .fa-twitter {
+            color: skyblue;
+
+        }
+        a:hover .fa-twitter {
+            color: blue;
+        }
+
+        .fa-linkedin-square {
+            color: black;
+
+        }
+        a:hover .fa-linkedin-square {
+            color: red;
+        }
+
+        .fa-key {
+            color: black;
+
+        }
+        a:hover .fa-key {
+            color: gold;
+        }
+    }
+
+    animation-name: headerDrop;
+    animation-duration: 1s;
+    animation-play-state: linear;
+}
+
+@keyframes headerDrop {
+    from { top: -2em; }
+    to { top: 0; }
+}
