@@ -21,7 +21,7 @@ Here would be a configuration file (let’s call it data.yaml) to describe a
 couple of interactions:
 
 __data.yaml__
-```
+```yaml
 - request:
     url: /api/users/nolongerhere
     method: GET

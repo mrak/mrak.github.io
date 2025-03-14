@@ -32,23 +32,23 @@ test cases.</p>
 <p>Here would be a configuration file (let’s call it data.yaml) to
 describe a couple of interactions:</p>
 <p><strong>data.yaml</strong></p>
-<pre class="chroma"><code><span class="line"><span class="cl">- request:
-</span></span><span class="line"><span class="cl">url: /api/users/nolongerhere
-</span></span><span class="line"><span class="cl">method: GET
-</span></span><span class="line"><span class="cl">response:
-</span></span><span class="line"><span class="cl">status: 410
-</span></span><span class="line"><span class="cl">headers:
-</span></span><span class="line"><span class="cl">content-type: application/json
-</span></span><span class="line"><span class="cl">body: &#39;{&#34;error&#34;:&#34;User nolongerhere no longer exists.&#34;}&#39;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">- request:
-</span></span><span class="line"><span class="cl">url: /api/tweets/
-</span></span><span class="line"><span class="cl">method: POST
-</span></span><span class="line"><span class="cl">response:
-</span></span><span class="line"><span class="cl">status: 201
-</span></span><span class="line"><span class="cl">headers:
-</span></span><span class="line"><span class="cl">location: /api/tweets/4abdf897adcee820cd
-</span></span></code></pre>
+<pre class="chroma"><code><span class="line"><span class="cl">- <span class="nt">request</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l">/api/users/nolongerhere</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">method</span><span class="p">:</span><span class="w"> </span><span class="l">GET</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">response</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="m">410</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">headers</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">content-type</span><span class="p">:</span><span class="w"> </span><span class="l">application/json</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">body</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;{&#34;error&#34;:&#34;User nolongerhere no longer exists.&#34;}&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="nt">request</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l">/api/tweets/</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">method</span><span class="p">:</span><span class="w"> </span><span class="l">POST</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">response</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="m">201</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">headers</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">location</span><span class="p">:</span><span class="w"> </span><span class="l">/api/tweets/4abdf897adcee820cd</span><span class="w">
+</span></span></span></code></pre>
 
 <p>We have a data file! … what do we <em>do</em> with it? Assuming you
 have stubby installed (which you should) you could do this:</p>
