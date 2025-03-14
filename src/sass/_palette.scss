@@ -21,15 +21,14 @@ $term-color13:     #AD7FA8;
 $term-color14:     #34E2E2;
 $term-color15:     #F5F5F5;
 
-$term-bottom:      #111111;
-$term-black:   $term-color0;
-$term-red:     $term-color1;
-$term-green:   $term-color2;
-$term-yellow:  $term-color3;
-$term-blue:    $term-color4;
-$term-magenta: $term-color5;
-$term-cyan:    $term-color6;
-$term-white:   $term-color7;
+$term-black:        $term-color0;
+$term-red:          $term-color1;
+$term-green:        $term-color2;
+$term-yellow:       $term-color3;
+$term-blue:         $term-color4;
+$term-magenta:      $term-color5;
+$term-cyan:         $term-color6;
+$term-white:        $term-color7;
 $term-bold-black:   $term-color8;
 $term-bold-red:     $term-color9;
 $term-bold-green:   $term-color10;
@@ -38,3 +37,21 @@ $term-bold-blue:    $term-color12;
 $term-bold-magenta: $term-color13;
 $term-bold-cyan:    $term-color14;
 $term-bold-white:   $term-color15;
+
+$theme-bottom  : "#1c1c1c"
+$theme-lowest  : "#262626"
+$theme-lower   : "#303030"
+$theme-low     : "#444444"
+$theme-high    : "#a8a8a8"
+$theme-higher  : "#dadada"
+$theme-highest : "#e4e4e4"
+$theme-top     : "#f5f5f5"
+
+$theme-red     : "#df5f87"
+$theme-orange  : "#d78700"
+$theme-yellow  : "#ffd700"
+$theme-green   : "#87af5f"
+$theme-cyan    : "#00afaf"
+$theme-blue    : "#87afff"
+$theme-purple  : "#af87ff"
+$theme-brown   : "#875f00"
