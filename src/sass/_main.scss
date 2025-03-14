@@ -1,18 +1,54 @@
+body {
+    font-family: mono, monospace, Courier New;
+    font-size: 14pt;
+    background-color: $background;
+    color: $foreground;
+    line-height: 1.5em;
+    margin: 1em auto;
+    max-width: 50em;
+    padding: 0 1em;
+}
+
+h1 {
+    word-wrap: break-word;
+    color: $term-color6;
+}
+
+h1 u {
+    color: $term-color6;
+    text-decoration-line: underline;
+}
+
+h2 {
+    color: $term-color4;
+}
+
+img {
+    display: block;
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+    color: orange;
+
+    &:hover {
+        font-weight: bold;
+    }
+
+    &:active {
+        text-decoration: none;
+    }
+}
+
 pre {
-    padding: 1em;
-    background: $term-background;
+    font-family: monospace, "Lucida Console", Monaco;
+    background: $term-bottom;
     color: $term-foreground;
-    border-radius: 1em;
-    margin: 1em 0;
-    box-shadow: 0 0 0.1em 0.1em gray;
-    text-shadow: none;
+    padding: 1em;
 }
 
 code {
-    font-family: monospace, "Lucida Console", Monaco;
-    background: $term-background;
-    color: $term-foreground;
-
     .red { color: $term-red; }
     .green { color: $term-green; }
     .yellow { color: $term-yellow; }

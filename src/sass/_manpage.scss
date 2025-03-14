@@ -1,0 +1,35 @@
+manpage {
+  dl {
+      margin-left: $indent;
+  }
+
+  dd {
+      margin-left: $indent;
+  }
+
+  p {
+      margin: 1.5em 0 1.5em 7ex;
+  }
+
+  h2, h3, h4, h5, h6 {
+      text-transform: uppercase;
+  }
+
+  table {
+      width: 100%;
+      padding: 1em 0;
+
+      th {
+          color: $term-color6;
+      }
+  }
+
+  strong {
+      color: $term-color12;
+  }
+
+  em {
+      color: $term-color13;
+      font-style: normal;
+  }
+}

@@ -1,3 +1,5 @@
+<manpage>
+
 | <u>ERICMRAK</u>(1) | Software Developers | <u>ERICMRAK</u>(1) |
 |:--------------|:-------------------:|--------------:|
 
@@ -71,3 +73,5 @@ Unlicense](http://unlicense.org).
 * [@Afmrak](https://twitter.com/Afmrak) - Twitter
 * [GitHub](https://github.com/mrak) profile
 * [keybase.io](https://keybase.io/mrak) identity
+
+</manpage>
