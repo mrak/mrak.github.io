@@ -1,2 +1,89 @@
 pre.chroma {
+  .bg      { color: $theme-lowest;                   } //Background
+//.chroma  { color: #000000;                         } //PreWrapper
+  .line    {                                         } //Line
+  .ln      {                                         } //LineNumbers
+  .lnt     {                                         } //LineNumbersTable
+  .hl      {                                         } //LineHighlight
+  .lntable {                                         } //LineTable
+  .lntd    {                                         } //LineTableTD
+  .lnlinks {                                         } //LineLink
+  .cl      {                                         } //CodeLine
+  .w       { color: #000000;                         } //Whitespace
+  .err     { color: $theme-red; font-weight: bold;   } //Error
+  .x       {                                         } //Other
+  .esc     { color: #000000;                         } // Escape
+  .k       { color: $theme-red;                      } //Keyword
+  .kc      { color: $theme-red;                      } //KeywordConstant
+  .kd      { color: $theme-red;                      } //KeywordDeclaration
+  .kn      { color: $theme-red;                      } //KeywordNamespace
+  .kp      { color: $theme-red;                      } //KeywordPseudo
+  .kr      { color: $theme-red;                      } //KeywordReserved
+  .kt      { color: $theme-blue;                     } //KeywordType
+  .n       { color: #000000;                         } //Name
+  .na      { color: $theme-brown;                    } //NameAttribute
+  .nb      { color: $theme-cyan;                     } //NameBuiltin
+  .bp      { color: $theme-cyan;                     } //NameBuiltinPseudo
+  .nc      { color: $theme-purple;                   } //NameClass
+  .no      { color: $theme-cyan;                     } //NameConstant
+  .nd      { color: $theme-yellow;                   } //NameDecorator
+  .ni      { color: #000000;                         } //NameEntity
+  .ne      { color: $theme-red;                      } //NameException
+  .nf      { color: $theme-orange;                   } //NameFunction
+  .fm      { color: $theme-orange;                   } //NameFunctionMagic
+  .py      { color: $theme-brown;                    } //NameProperty
+  .nl      { color: $theme-red;                      } //NameLabel
+  .nn      { color: #000000;                         } //NameNamespace
+  .nx      { color: #000000;                         } //NameOther
+  .nt      { color: $theme-cyan;                     } //NameTag
+  .nv      { color: #000000;                         } //NameVariable
+  .vc      { color: #000000;                         } //NameVariableClass
+  .vg      { color: #000000;                         } //NameVariableGlobal
+  .vi      { color: #000000;                         } //NameVariableInstance
+  .vm      { color: #000000;                         } //NameVariableMagic
+  .l       { color: $theme-green;                    } //Literal
+  .ld      { color: #000000;                         } //LiteralDate
+  .s       { color: $theme-green;                    } //String
+  .sa      { color: $theme-green;                    } //StringAffix
+  .sb      { color: $theme-green;                    } //StringBacktick
+  .sc      { color: $theme-green; font-weight: bold; } //StringChar
+  .dl      { color: $theme-green;                    } //StringDelimiter
+  .sd      { color: $theme-green;                    } //StringDoc
+  .s2      { color: $theme-green;                    } //StringDouble
+  .se      { color: $theme-cyan;                     } //StringEscape
+  .sh      { color: $theme-green;                    } //StringHeredoc
+  .si      { color: $theme-green;                    } //StringInterpol
+  .sx      { color: $theme-green;                    } //StringOther
+  .sr      { color: $theme-green;                    } //StringRegex
+  .s1      { color: $theme-green;                    } //StringSingle
+  .ss      { color: $theme-green;                    } //StringSymbol
+  .m       { color: $theme-cyan;                     } //Number
+  .mb      { color: $theme-cyan;                     } //NumberBin
+  .mf      { color: $theme-cyan;                     } //NumberFloat
+  .mh      { color: $theme-cyan;                     } //NumberHex
+  .mi      { color: $theme-cyan;                     } //NumberInteger
+  .il      { color: $theme-cyan;                     } //NumberIntegerLong
+  .mo      { color: $theme-cyan;                     } //NumberOct
+  .o       { color: $theme-high;                     } //Operator
+  .ow      { color: $theme-high;                     } //OperatorWord
+  .p       { color: $theme-high;                     } //Punctuation
+  .c       { color: $theme-low;                      } //Comment
+  .ch      { color: $theme-low;                      } //CommentHashbang
+  .cm      { color: $theme-low;                      } //CommentMultiline
+  .cp      { color: $theme-yellow;                   } //CommentPreproc
+  .cpf     { color: $theme-yellow;                   } //CommentPreprocFile
+  .c1      { color: $theme-low;                      } //CommentSingle
+  .cs      { color: $theme-low;                      } //CommentSpecial
+  .g       { color: #000000;                         } //Generic
+  .gd      { text-decoration: line-through;          } //GenericDeleted
+  .ge      { font-style: italic;                     } //GenericEmph
+  .gr      { color: #000000;                         } //GenericError
+  .gh      { color: $theme-blue;                     } //GenericHeading
+  .gi      { color: #000000;                         } //GenericInserted
+  .go      { color: #000000;                         } //GenericOutput
+  .gp      { color: #000000;                         } //GenericPrompt
+  .gs      { font-weight: bold;                      } //GenericStrong
+  .gu      { color: $theme-blue;                     } //GenericSubheading
+  .gt      { color: #000000;                         } //GenericTraceback
+  .gl      { text-decoration: underline;             } //GenericUnderline
 }

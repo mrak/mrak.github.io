@@ -1,18 +1,17 @@
 #!/bin/sh
 
 TMPCODE="$(mktemp)"
-TMPOUT="$(mktemp)"
 IN_CODEBLOCK=
 CODEBLOCK_LANG=
 
-while read -r line; do
+while IFS= read -r line; do
   # code fence sighted
   if expr "$line" : ' *```[^ ]* *' >/dev/null; then
     # end code block, format seen code with chroma
     if [ "$IN_CODEBLOCK" = 1 ]; then
       IN_CODEBLOCK=
-      chroma "$TMPCODE" --html --html-only -l "$CODEBLOCK_LANG" >> "$TMPOUT"
-      echo >> "$TMPOUT"
+      chroma "$TMPCODE" --html --html-only -l "$CODEBLOCK_LANG"
+      echo
     # begin code block
     else
       IN_CODEBLOCK=1
@@ -26,9 +25,8 @@ while read -r line; do
     echo "$line" >> "$TMPCODE"
   # save regular line
   else
-    echo "$line" >> "$TMPOUT"
+    echo "$line"
   fi
-done
+done | pandoc -f gfm -t html
 
-pandoc -f gfm -t html "$TMPOUT"
-rm "$TMPCODE" "$TMPOUT"
+rm "$TMPCODE"
