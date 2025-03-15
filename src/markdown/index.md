@@ -59,7 +59,7 @@ __ericmrak__ _OPERATION_K8S_ \\
 
 ## Reporting bugs
 
-Submit bug reports via the GitHub [issues page](https://github.com/mrak/website/issues) for this website.
+Submit bug reports via the GitHub [issues page](https://github.com/mrak/mrak.github.io/issues) for this website.
 
 ## Copyright
 
@@ -68,9 +68,9 @@ Unlicense](http://unlicense.org).
 
 ## See also
 
-* [stubby4node](/2012-10-09/stubby4node) - a stub server for node.js
+* [stubby4node](/2012-10-09/stubby4node) a stub server for node.js
 * [LinkedIn](https://linkedin.com/in/ericmrak) profile
-* [@Afmrak](https://twitter.com/Afmrak) - Twitter
+* [@Afmrak](https://twitter.com/Afmrak) twitter/X
 * [GitHub](https://github.com/mrak) profile
 * [keybase.io](https://keybase.io/mrak) identity
 
