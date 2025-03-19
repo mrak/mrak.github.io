@@ -7,9 +7,7 @@ find src/markdown -type f \
     target="${md%md}html"
     target="docs${target#src/markdown}"
     mkdir -p "$(dirname "$target")"
-    cat src/html/header.html > "$target"
-    ./build/markdown.sh < "$md" >> "$target"
-    cat src/html/footer.html >> "$target"
+    ./build/markdown.sh src/html/header.html src/html/footer.html < "$md" > "$target"
     sed -i -e "s/@COPYRIGHT@/${COPYRIGHT_YEAR}/g" "$target"
 done
 

@@ -1,5 +1,4 @@
 body {
-  font-family: mono, monospace, Courier New;
   font-size: 14pt;
   background-color: #262626;
   color: #FEFEFE;
@@ -107,6 +106,10 @@ code .bold.cyan {
 
 code .bold.white {
   color: #F5F5F5;
+}
+
+manpage {
+  font-family: mono, monospace, Courier New;
 }
 
 manpage dl {

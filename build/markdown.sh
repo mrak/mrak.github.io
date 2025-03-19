@@ -2,9 +2,15 @@
 
 set -eu
 
-TMPCODE="$(mktemp)" IN_CODEBLOCK='' CODEBLOCK_LANG=''
+TMPCODE="$(mktemp)"
+IN_HEADER=''
+IN_CODEBLOCK=''
+CODEBLOCK_LANG=''
+HEADER_TEMPLATE="${1:-/dev/null}"
+FOOTER_TEMPLATE="${2:-/dev/null}"
 
-while IFS= read -r line; do
+process_line() {
+  line="$1"
   if [ "$IN_CODEBLOCK" = 1 ]; then
     if expr "$line" : ' *```[^ ]* *' >/dev/null; then
       IN_CODEBLOCK=
@@ -21,6 +27,36 @@ while IFS= read -r line; do
       echo "$line"
     fi
   fi
-done | pandoc -f gfm -t html
+}
+
+preprocess() {
+  while IFS= read -r line; do
+    if [ -z "$IN_HEADER" ]; then
+      if [ "$line" = "---" ]; then
+        IN_HEADER=1 && continue
+      fi
+      break
+    fi
+
+    case "$line" in
+      "---") break ;;
+      description*) DESCRIPTION="$(expr "$line" : 'description *= *\(.*\)')" ;;
+      keywords*) KEYWORDS="$(expr "$line" : 'keywords *= *\(.*\)')" ;;
+    esac
+  done
+
+  env DESCRIPTION="${DESCRIPTION:-}" KEYWORDS="${KEYWORDS:-}" envsubst < "$HEADER_TEMPLATE"
+  echo
+  [ -z "$IN_HEADER" ] && process_line "$line"
+
+  while IFS= read -r line; do
+    process_line "$line"
+  done
+
+  echo
+  cat "$FOOTER_TEMPLATE"
+}
+
+preprocess </dev/stdin | pandoc -f gfm -t html
 
 rm "$TMPCODE"

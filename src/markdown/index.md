@@ -1,3 +1,7 @@
+---
+keywords = software developer,peakcock of darkness,professional
+description = Peakcock of Darkness
+---
 <manpage>
 
 | <u>ERICMRAK</u>(1) | Software Developers | <u>ERICMRAK</u>(1) |
