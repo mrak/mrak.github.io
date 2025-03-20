@@ -18,8 +18,10 @@ blog_index() {
   env TITLE="Eric Mrak's blog" envsubst < src/html/header.html > docs/blog/index.html
   find src/markdown/blog -type f | sort -r \
   | while read -r md; do
-    DATE="${md##src/markdown/blog/}"
+    DATE="${md#src/markdown/blog/}"
     DATE="${DATE%%/*}"
+    HREF="${md#src/markdown}"
+    HREF="${HREF%.md}"
     sed -n '/---/,/---/{//!p;}' "$md" \
     | {
       TITLE=
@@ -30,7 +32,7 @@ blog_index() {
           description*) DESCRIPTION="$(expr "$line" : 'description *= *\(.*\)')" ;;
         esac
       done
-      env TITLE="$TITLE" DATE="$DATE" DESCRIPTION="$DESCRIPTION" envsubst < src/html/blog.html >> docs/blog/index.html
+      env TITLE="$TITLE" HREF="$HREF" DATE="$DATE" DESCRIPTION="$DESCRIPTION" envsubst < src/html/blog.html >> docs/blog/index.html
     }
   done
   envsubst < src/html/footer.html >> docs/blog/index.html

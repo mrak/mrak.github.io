@@ -72,6 +72,7 @@ Unlicense](http://unlicense.org).
 
 ## See also
 
+* [blog](/blog)
 * [stubby4node](/blog/2012-10-09/stubby4node) a stub server for node.js
 * [LinkedIn](https://linkedin.com/in/ericmrak) profile
 * [@Afmrak](https://twitter.com/Afmrak) twitter/X

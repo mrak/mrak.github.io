@@ -1,6 +1,6 @@
 body {
   font-size: 14pt;
-  background-color: #262626;
+  background-color: #1c1c1c;
   color: #FEFEFE;
   line-height: 1.5em;
   margin: 1em auto;
@@ -42,7 +42,7 @@ a:active {
 
 pre {
   font-family: monospace, "Lucida Console", Monaco;
-  background: #1c1c1c;
+  background: #262626;
   color: #CCCCCC;
   padding: 1em;
   overflow-x: auto;
