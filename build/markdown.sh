@@ -8,6 +8,9 @@ IN_CODEBLOCK=''
 CODEBLOCK_LANG=''
 HEADER_TEMPLATE="${1:-/dev/null}"
 FOOTER_TEMPLATE="${2:-/dev/null}"
+TITLE="Eric Mrak"
+DESCRIPTION=
+KEYWORDS=
 
 process_line() {
   line="$1"
@@ -40,12 +43,13 @@ preprocess() {
 
     case "$line" in
       "---") break ;;
+      title*) TITLE="$(expr "$line" : 'title *= *\(.*\)')" ;;
       description*) DESCRIPTION="$(expr "$line" : 'description *= *\(.*\)')" ;;
       keywords*) KEYWORDS="$(expr "$line" : 'keywords *= *\(.*\)')" ;;
     esac
   done
 
-  env DESCRIPTION="${DESCRIPTION:-}" KEYWORDS="${KEYWORDS:-}" envsubst < "$HEADER_TEMPLATE"
+  env TITLE="$TITLE" DESCRIPTION="$DESCRIPTION" KEYWORDS="$KEYWORDS" envsubst < "$HEADER_TEMPLATE"
   echo
   [ -z "$IN_HEADER" ] && process_line "$line"
 

@@ -1,3 +1,8 @@
+---
+title = stubby4node
+description = A configurable server for mocking/stubbing external systems during development.
+keywords = javascript,nodejs,testing,server,stubbing,development
+---
 # stubby4node
 
 What is it? Good question! Here's an impromptu tag-line:
