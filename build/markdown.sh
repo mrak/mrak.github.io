@@ -54,7 +54,7 @@ preprocess() {
   done
 
   echo
-  cat "$FOOTER_TEMPLATE"
+  envsubst < "$FOOTER_TEMPLATE"
 }
 
 preprocess </dev/stdin | pandoc -f gfm -t html

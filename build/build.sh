@@ -11,4 +11,5 @@ find src/markdown -type f \
     sed -i -e "s/@COPYRIGHT@/${COPYRIGHT_YEAR}/g" "$target"
 done
 
+mkdir -p docs/css
 sassc --sourcemap=auto --style expanded src/sass/styles.scss docs/css/styles.css
