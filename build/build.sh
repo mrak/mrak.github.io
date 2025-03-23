@@ -8,7 +8,10 @@ markdowns() {
     target="${md%md}html"
     target="docs${target#src/markdown}"
     mkdir -p "$(dirname "$target")"
-    ./build/markdown.sh src/html/header.html src/html/footer.html < "$md" > "$target"
+    ./build/preprocess.awk src/html/header.html src/html/footer.html \
+      < "$md" \
+      | pandoc -f gfm -t html \
+      > "$target"
     sed -i -e "s/@COPYRIGHT@/${COPYRIGHT_YEAR}/g" "$target"
   done
 }
