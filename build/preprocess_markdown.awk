@@ -9,11 +9,14 @@ BEGIN {
   title = "Eric Mrak"
   headerfile = ARGV[1]
   footerfile = ARGV[2]
+  "date +%Y" | getline copyrite
   delete ARGV[1]
   delete ARGV[2]
   "mktemp" | getline tmpfile
   FS = ""
 }
+
+{ gsub("@COPYRITE@", copyrite, $0) }
 
 NR == 1 && $0 == "---" { in_header = 1; FS = " *= *"; next }
 NR == 1 { header() }

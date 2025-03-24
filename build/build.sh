@@ -1,8 +1,6 @@
 #!/bin/sh
 
-COPYRIGHT_YEAR="$(date +%Y)"
-
-markdown() {
+markdown() (
   md="$1"
   target="${md%md}html"
   target="docs${target#src/markdown}"
@@ -10,12 +8,10 @@ markdown() {
   ./build/preprocess_markdown.awk src/html/header.html src/html/footer.html "$md" \
     | pandoc -f gfm -t html \
     > "$target"
-  sed -i -e "s/@COPYRIGHT@/${COPYRIGHT_YEAR}/g" "$target"
-}
+)
 
 markdowns() {
-  find src/markdown -type f \
-  | while read -r md; do markdown "$md" & done
+  find src/markdown -type f | while read -r md; do markdown "$md" & done
 }
 
 blog_index() {
