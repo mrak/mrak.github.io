@@ -22,8 +22,10 @@ blog_index() {
 }
 
 main() {
-  markdowns
-  blog_index
+  case "$1" in
+    markdowns) markdowns ;;
+    blog_index) blog_index ;;
+  esac
 }
 
 main "$@"

@@ -1,15 +1,15 @@
-.PHONY: build start stylesheets clean
-ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
+.PHONY: build start clean
 
-build: stylesheets
-	${ROOT_DIR}/build/build.sh
+build: docs/css docs/blog/index.html
+	build/build.sh markdowns
+
+docs/blog/index.html: src/markdown/blog
+	build/build.sh blog_index
 
 start:
-	nginx -c ${ROOT_DIR}/nginx.conf -p ${ROOT_DIR}
+	nginx -c nginx.conf -p .
 
-stylesheets: docs/css/styles.css
-
-docs/css/styles.css: src/sass
+docs/css: src/sass
 	mkdir -p docs/css
 	sassc --sourcemap=auto --style expanded src/sass/styles.scss docs/css/styles.css
 
