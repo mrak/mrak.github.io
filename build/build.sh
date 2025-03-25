@@ -21,16 +21,9 @@ blog_index() {
   envsubst < src/html/footer.html >> docs/blog/index.html
 }
 
-stylesheets() {
-  mkdir -p docs/css
-  sassc --sourcemap=auto --style expanded src/sass/styles.scss docs/css/styles.css
-}
-
 main() {
-  rm -rf docs
   markdowns
   blog_index
-  stylesheets
 }
 
 main "$@"
