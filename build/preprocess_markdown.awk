@@ -18,7 +18,7 @@ BEGIN {
 
 { gsub("@COPYRIGHT@", copyright, $0) }
 
-NR == 1 && $0 == "---" { in_header = 1; FS = " *= *"; next }
+NR == 1 && $0 == "---" { in_header = 1; FS = ":  *"; next }
 NR == 1 { header() }
 
 in_header == 1 && $0 == "---"         { in_header = 0; FS = ""; header(); next }

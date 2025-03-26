@@ -17,7 +17,7 @@ FNR == 1 {
   gsub("^src/markdown|\\.md$", "", href)
 }
 
-FNR == 1 && $0 == "---" { in_header = 1; FS = " *= *"; next }
+FNR == 1 && $0 == "---" { in_header = 1; FS = ":  *"; next }
 FNR == 1 { entry(title href date description); nextfile }
 
 in_header == 1 && $0 == "---"         { in_header = 0; FS = ""; entry(title, href, date, description); nextfile }
