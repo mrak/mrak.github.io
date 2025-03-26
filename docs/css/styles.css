@@ -42,6 +42,7 @@ a:active {
 
 pre {
   font-family: monospace, "Lucida Console", Monaco;
+  line-height: normal;
   background: #262626;
   color: #CCCCCC;
   padding: 1em;

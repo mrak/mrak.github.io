@@ -1,0 +1,61 @@
+<!doctype html>
+
+<!--
+Try visiting this page in a text-based browser such as lynx!
+-->
+
+<html>
+<head>
+<title>Authenticating EKS to Google Cloud</title>
+<meta charset="UTF-8">
+<meta name="author" content="Eric Mrak">
+<meta name="description" content="This article covers the use case of authenticating a kubernetes workload in AWS using IRSA or EKS Pod Identity to access resources in Google Cloud. The example use case will involve a Golang application across two kubernetes clusters in different AWS accounts accessing the same Google Cloud Storage bucket.">
+<meta name="keywords" content="golang,AWS,GCP,IRSA,Workload Identity Pool,EKS,GKE">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/styles.css" type="text/css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👤</text></svg>">
+</head>
+<body>
+<main>
+
+<h1 id="authenticating-eks-to-google-cloud">Authenticating EKS to Google
+Cloud</h1>
+<p>This article covers the use case of authenticating a kubernetes
+workload in AWS using IRSA or EKS Pod Identity to access resources in
+Google Cloud. The example use case will involve a Golang application
+across two kubernetes clusters in different AWS accounts accessing the
+same Google Cloud Storage bucket.</p>
+<p>It is assumed that your workload in the kubernetes clusters are
+making use of IRSA or EKS Pod Identity in order to automatically
+associate an AWS IAM role with the workload's kubernetes
+ServiceAccount.</p>
+<p>This is a diagram demonstrating the relationships between the
+clouds:</p>
+<pre class="chroma"><code><span class="line"><span class="cl">┌─────────────────────────────┐     ┌───────────────────────────────┐
+</span></span><span class="line"><span class="cl">│AWS Account one         ┌───┐│     │                  Google Cloud │
+</span></span><span class="line"><span class="cl">│                 ┌─────►│IAM││     │┌───────────────────────────┐  │
+</span></span><span class="line"><span class="cl">│             IRSA│      └───┘│  ┌──►│Workload Identity Providers│  │
+</span></span><span class="line"><span class="cl">│┌────────────────┼──────────┐│  │  │└─┬─────────────────────────┘  │
+</span></span><span class="line"><span class="cl">││kubernetes      ▼          ││  │  │  │attributes                  │
+</span></span><span class="line"><span class="cl">││ ┌───┐    ┌──────────────┐ ││  │  │┌─▼────────────────────┐       │
+</span></span><span class="line"><span class="cl">││ │Pod├───►│ServiceAccount├─┼┼──┤  ││Workload Identity Pool│       │
+</span></span><span class="line"><span class="cl">││ └───┘    └──────────────┘ ││  │  │└─┬────────────────────┘       │
+</span></span><span class="line"><span class="cl">│└───────────────────────────┘│  │  │  │principleSet                │
+</span></span><span class="line"><span class="cl">└─────────────────────────────┘  │  │┌─▼─────────────┐ IAM  ┌──────┐│
+</span></span><span class="line"><span class="cl">                                 │  ││Service Account├─────►│Bucket││
+</span></span><span class="line"><span class="cl">┌─────────────────────────────┐  │  │└───────────────┘      └──────┘│
+</span></span><span class="line"><span class="cl">│AWS Account two         ┌───┐│  │  └───────────────────────────────┘
+</span></span><span class="line"><span class="cl">│                 ┌─────►│IAM││  │
+</span></span><span class="line"><span class="cl">│             IRSA│      └───┘│  │
+</span></span><span class="line"><span class="cl">│┌────────────────┼──────────┐│  │
+</span></span><span class="line"><span class="cl">││kubernetes      ▼          ││  │
+</span></span><span class="line"><span class="cl">││ ┌───┐    ┌──────────────┐ ││  │
+</span></span><span class="line"><span class="cl">││ │Pod├───►│ServiceAccount├─┼┼──┘
+</span></span><span class="line"><span class="cl">││ └───┘    └──────────────┘ ││
+</span></span><span class="line"><span class="cl">│└───────────────────────────┘│
+</span></span><span class="line"><span class="cl">└─────────────────────────────┘
+</span></span></code></pre>
+
+</main>
+</body>
+</html>

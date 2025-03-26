@@ -1,6 +1,6 @@
 ---
-keywords = software developer,peakcock of darkness,professional
-description = Peakcock of Darkness
+keywords: software developer,peakcock of darkness,professional
+description: Peakcock of Darkness
 ---
 <manpage>
 
