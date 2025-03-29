@@ -65,10 +65,9 @@ __ericmrak__ _OPERATION_K8S_ \\
 
 Submit bug reports via the GitHub [issues page](https://github.com/mrak/mrak.github.io/issues) for this website.
 
-## Copyright
+## License
 
-Copyright &copy; @COPYRIGHT@ Eric Mrak. License under [The
-Unlicense](http://unlicense.org).
+Licensed under [The Unlicense](http://unlicense.org).
 
 ## See also
 

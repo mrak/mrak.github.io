@@ -18,7 +18,7 @@ blog_index() {
   mkdir -p docs/blog
   env TITLE="Eric Mrak's blog" envsubst < src/html/header.html > docs/blog/index.html
   find src/markdown/blog -type f | sort -r | xargs ./build/blog_index.awk
-  envsubst < src/html/footer.html >> docs/blog/index.html
+  env YEAR="$(date +%Y)" envsubst < src/html/footer.html >> docs/blog/index.html
 }
 
 main() {
@@ -26,6 +26,7 @@ main() {
     markdowns) markdowns ;;
     blog_index) blog_index ;;
   esac
+  wait
 }
 
 main "$@"

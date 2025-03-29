@@ -8,6 +8,19 @@ body {
   padding: 0 1em;
 }
 
+header, footer {
+  padding: 0.5em;
+  background-color: #262626;
+}
+
+header table, footer table {
+  width: 100%;
+}
+
+footer {
+  margin-top: 1em;
+}
+
 h1 {
   word-wrap: break-word;
   color: #06989A;

@@ -8,6 +8,18 @@ body {
     padding: 0 1em;
 }
 
+header, footer {
+  padding: 0.5em;
+  background-color: $theme-lowest;
+  table {
+    width: 100%;
+  }
+}
+
+footer {
+  margin-top: 1em;
+}
+
 h1 {
     word-wrap: break-word;
     color: $term-color6;

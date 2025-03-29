@@ -11,12 +11,9 @@ BEGIN {
   footerfile = ARGV[2]
   delete ARGV[1]
   delete ARGV[2]
-  "date +%Y" | getline copyright
   "mktemp" | getline tmpfile
   FS = ""
 }
-
-{ gsub("@COPYRIGHT@", copyright, $0) }
 
 NR == 1 && $0 == "---" { in_header = 1; FS = ":  *"; next }
 NR == 1 { header() }
@@ -44,6 +41,10 @@ in_header == 1 && $1 == "keywords"    { keywords = $2;    next }
 { if (in_code) { print $0 >> tmpfile } else print }
 
 END {
-  while ((getline<footerfile) > 0) { print }
+  "date +%Y" | getline copyright
+  while ((getline<footerfile) > 0) {
+    sub(/\${YEAR}/,copyright)
+    print
+  }
   system(sprintf("rm '%s'", tmpfile))
 }
