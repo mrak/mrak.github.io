@@ -1,4 +1,5 @@
 body {
+  font-family: mono, monospace, Courier New;
   font-size: 14pt;
   background-color: #1c1c1c;
   color: #FEFEFE;
@@ -8,13 +9,17 @@ body {
   padding: 0 1em;
 }
 
-header, footer {
-  padding: 0.5em;
-  background-color: #262626;
-}
-
 header table, footer table {
   width: 100%;
+  padding: 1em 0;
+}
+
+header table th, footer table th {
+  color: #00afaf;
+}
+
+header a, footer a {
+  color: #00afaf;
 }
 
 footer {
@@ -26,9 +31,8 @@ h1 {
   color: #06989A;
 }
 
-h1 u {
-  color: #06989A;
-  text-decoration-line: underline;
+h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
 }
 
 h2 {
@@ -41,16 +45,16 @@ img {
 }
 
 a {
-  text-decoration: none;
-  color: orange;
+  color: #87af5f;
 }
 
-a:hover {
-  font-weight: bold;
+strong {
+  color: #729FCF;
 }
 
-a:active {
-  text-decoration: none;
+em {
+  color: #AD7FA8;
+  font-style: normal;
 }
 
 pre {
@@ -120,44 +124,6 @@ code .bold.cyan {
 
 code .bold.white {
   color: #F5F5F5;
-}
-
-manpage {
-  font-family: mono, monospace, Courier New;
-}
-
-manpage dl {
-  margin-left: 7ex;
-}
-
-manpage dd {
-  margin-left: 7ex;
-}
-
-manpage p {
-  margin: 1.5em 0 1.5em 7ex;
-}
-
-manpage h2, manpage h3, manpage h4, manpage h5, manpage h6 {
-  text-transform: uppercase;
-}
-
-manpage table {
-  width: 100%;
-  padding: 1em 0;
-}
-
-manpage table th {
-  color: #06989A;
-}
-
-manpage strong {
-  color: #729FCF;
-}
-
-manpage em {
-  color: #AD7FA8;
-  font-style: normal;
 }
 
 pre.chroma .bg {

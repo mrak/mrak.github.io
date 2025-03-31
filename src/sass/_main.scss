@@ -1,4 +1,5 @@
 body {
+    font-family: mono, monospace, Courier New;
     font-size: 14pt;
     background-color: $background;
     color: $foreground;
@@ -9,10 +10,15 @@ body {
 }
 
 header, footer {
-  padding: 0.5em;
-  background-color: $theme-lowest;
   table {
     width: 100%;
+    padding: 1em 0;
+    th {
+        color: $theme-cyan;
+    }
+  }
+  a {
+    color: $theme-cyan;
   }
 }
 
@@ -25,9 +31,8 @@ h1 {
     color: $term-color6;
 }
 
-h1 u {
-    color: $term-color6;
-    text-decoration-line: underline;
+h2, h3, h4, h5, h6 {
+    text-transform: uppercase;
 }
 
 h2 {
@@ -40,16 +45,16 @@ img {
 }
 
 a {
-    text-decoration: none;
-    color: orange;
+    color: $theme-green;
+}
 
-    &:hover {
-        font-weight: bold;
-    }
+strong {
+    color: $term-color12;
+}
 
-    &:active {
-        text-decoration: none;
-    }
+em {
+    color: $term-color13;
+    font-style: normal;
 }
 
 pre {
